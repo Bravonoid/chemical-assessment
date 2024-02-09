@@ -1,0 +1,744 @@
+[
+  {
+    "object": "Sosialisasi New FRESH Standard 4.12",
+    "questions": [
+      {
+        "question": "Apakah sosialisasi New Fresh Standard 4.12 telah dilaksanakan?",
+        "options": [
+          {
+            "option": "Sudah",
+            "grade": 100
+          },
+          {
+            "option": "Belum",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      }
+    ]
+  },
+  {
+    "object": "SOP Penanganan Bahan Kimia",
+    "questions": [
+      {
+        "question": "Apakah SOP Penanganan Bahan Kimia tersedia?",
+        "options": [
+          {
+            "option": "Tersedia",
+            "grade": 100
+          },
+          {
+            "option": "Tidak",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      }
+    ]
+  },
+  {
+    "object": "Surat Pengangkatan Chemical Coordinator",
+    "questions": [
+      {
+        "question": "Apakah Surat Pengangkatan Chemical Coordinator tersedia?",
+        "options": [
+          {
+            "option": "Tersedia",
+            "grade": 100
+          },
+          {
+            "option": "Tidak",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      }
+    ]
+  },
+  {
+    "object": "Lokasi Penyimpanan BKB",
+    "questions": [
+      {
+        "question": "Lokasi penyimpanan",
+        "options": [
+          {
+            "option": "Dalam Gedung",
+            "grade": 0
+          },
+          {
+            "option": "Luar Gedung",
+            "grade": 100
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Menghalangi akses jalan, Tangga, dan Jalur evakuasi?",
+        "options": [
+          {
+            "option": "Ya",
+            "grade": 0
+          },
+          {
+            "option": "Tidak",
+            "grade": 100
+          }
+        ],
+        "type": "radio"
+      }
+    ]
+  },
+  {
+    "object": "Lemari Penyimpanan Flammable",
+    "questions": [
+      {
+        "question": "Tipe Lemari",
+        "options": [
+          {
+            "option": "Standard",
+            "grade": 0
+          },
+          {
+            "option": "Tidak Standard",
+            "grade": 100
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Lubang Ventilasi",
+        "options": [
+          {
+            "option": "Terbuka",
+            "grade": 100
+          },
+          {
+            "option": "Tertutup",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Kasa Tahan Api",
+        "options": [
+          {
+            "option": "Ada",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Ada",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Pintu",
+        "options": [
+          {
+            "option": "Otomatis",
+            "grade": 0
+          },
+          {
+            "option": "Manual",
+            "grade": 100
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Warna Lemari",
+        "options": [
+          {
+            "option": "Kuning",
+            "grade": 100
+          },
+          {
+            "option": "Non-Kuning",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Secondary Containtment",
+        "options": [
+          {
+            "option": "Ada",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Ada",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Jumlah Lemari yang Disimpan",
+        "type": "number",
+        "minimum": 1
+      },
+      {
+        "question": "Total Kapasitas Penyimpanan",
+        "type": "number",
+        "minimum": 1
+      }
+    ]
+  },
+  {
+    "object": "Lemari Penyimpanan Korosif",
+    "questions": [
+      {
+        "question": "Tipe Lemari",
+        "options": [
+          {
+            "option": "Standard",
+            "grade": 0
+          },
+          {
+            "option": "Tidak Standard",
+            "grade": 100
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Warna Lemari",
+        "options": [
+          {
+            "option": "Biru",
+            "grade": 100
+          },
+          {
+            "option": "Non-Biru",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Lapisan Tahan Korosi",
+        "options": [
+          {
+            "option": "Polyethylene",
+            "grade": 33
+          },
+          {
+            "option": "Kayu",
+            "grade": 33
+          },
+          {
+            "option": "Karet",
+            "grade": 33
+          },
+          {
+            "option": "Tidak Ada",
+            "grade": 0
+          }
+        ],
+        "type": "multiselect"
+      },
+      {
+        "question": "Jumlah Lemari yang Disimpan",
+        "type": "number",
+        "minimum": 1
+      },
+      {
+        "question": "Total Kapasitas Penyimpanan",
+        "type": "number",
+        "minimum": 1
+      }
+    ]
+  },
+  {
+    "object": "Sign Dilarang Merokok & Tanda Peringatan",
+    "questions": [
+      {
+        "question": "Sign Dilarang Merokok",
+        "options": [
+          {
+            "option": "Ada",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Ada",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Tanda Peringatan **Dilarang menyalakan api terbuka dan melakukan aktifitas kerja panas dalam radius 11-meter**",
+        "options": [
+          {
+            "option": "Ada",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Ada",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      }
+    ]
+  },
+  {
+    "object": "Plakat Hazmat",
+    "questions": [
+      {
+        "question": "Plakat Hazmat",
+        "options": [
+          {
+            "option": "Ada",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Ada",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Lokasi Pemasangan",
+        "options": [
+          {
+            "option": "Sesuai",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Sesuai",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      }
+    ]
+  },
+  {
+    "object": "Simbol GHS",
+    "questions": [
+      {
+        "question": "Simbol GHS Terpasang",
+        "options": [
+          {
+            "option": "Ada",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Ada",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Mengikuti simbol GHS",
+        "options": [
+          {
+            "option": "GHS",
+            "grade": 100
+          },
+          {
+            "option": "Belum GHS",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Simbol GHS di Lokasi",
+        "options": [
+          {
+            "option": "Flamm",
+            "grade": 11
+          },
+          {
+            "option": "Corr",
+            "grade": 11
+          },
+          {
+            "option": "Irritant",
+            "grade": 11
+          },
+          {
+            "option": "Comp.Gas",
+            "grade": 11
+          },
+          {
+            "option": "Health",
+            "grade": 11
+          },
+          {
+            "option": "Env",
+            "grade": 11
+          },
+          {
+            "option": "Explo",
+            "grade": 11
+          },
+          {
+            "option": "Toxic",
+            "grade": 11
+          },
+          {
+            "option": "Oxidizing",
+            "grade": 11
+          }
+        ],
+        "type": "multiselect"
+      },
+      {
+        "question": "Terpasang Sesuai Kelas Bahaya",
+        "options": [
+          {
+            "option": "Ya",
+            "grade": 100
+          },
+          {
+            "option": "Tidak",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      }
+    ]
+  },
+  {
+    "object": "Label & Praktek Penyimpanan",
+    "questions": [
+      {
+        "question": "Praktek Pelabelan B3 di Lokasi",
+        "options": [
+          {
+            "option": "Ada",
+            "grade": 0
+          },
+          {
+            "option": "Tidak Ada",
+            "grade": 100
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Label B3 Sesuai Standard",
+        "options": [
+          {
+            "option": "Ya",
+            "grade": 100
+          },
+          {
+            "option": "Tidak",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Tabel Segregasi di Lokasi Penyimpanan",
+        "options": [
+          {
+            "option": "Ada",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Ada",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Praktek Penyimpanan Sesuai Compatabilitas/Segregasi",
+        "options": [
+          {
+            "option": "Ya",
+            "grade": 100
+          },
+          {
+            "option": "Tidak",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Wadah Bahan Kimia ditutup dengan Rapat",
+        "options": [
+          {
+            "option": "Ya",
+            "grade": 100
+          },
+          {
+            "option": "Tidak",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      }
+    ]
+  },
+  {
+    "object": "Daftar Inventaris Kimia",
+    "questions": [
+      {
+        "question": "Inventory",
+        "options": [
+          {
+            "option": "Ada",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Ada",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Sesuai Standard",
+        "options": [
+          {
+            "option": "Ya",
+            "grade": 100
+          },
+          {
+            "option": "Tidak",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Inventory Terupdate",
+        "options": [
+          {
+            "option": "Ya",
+            "grade": 100
+          },
+          {
+            "option": "Tidak",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      }
+    ]
+  },
+  {
+    "object": "SDS",
+    "questions": [
+      {
+        "question": "SDS di Lokasi Penyimpanan BKB",
+        "options": [
+          {
+            "option": "Ada",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Ada",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Status SDS",
+        "options": [
+          {
+            "option": "Valid",
+            "grade": 100
+          },
+          {
+            "option": "Expired",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Versi SDS",
+        "options": [
+          {
+            "option": "GHS",
+            "grade": 100
+          },
+          {
+            "option": "Non GHS",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "SDS Bahasa Indonesia",
+        "options": [
+          {
+            "option": "Ya",
+            "grade": 100
+          },
+          {
+            "option": "Tidak",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Mini SDS",
+        "options": [
+          {
+            "option": "Tersedia",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Tersedia",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      }
+    ]
+  },
+  {
+    "object": "Emergency Tools",
+    "questions": [
+      {
+        "question": "APAR",
+        "options": [
+          {
+            "option": "Tersedia",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Tersedia",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "APAR Diinspeksi Bulanan",
+        "options": [
+          {
+            "option": "Ya",
+            "grade": 100
+          },
+          {
+            "option": "Tidak",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Spill Kit",
+        "options": [
+          {
+            "option": "Tersedia",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Tersedia",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Eye Wash",
+        "options": [
+          {
+            "option": "Tersedia",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Tersedia",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Eye Wash Diinspeksi Mingguan",
+        "options": [
+          {
+            "option": "Ya",
+            "grade": 100
+          },
+          {
+            "option": "Tidak",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      }
+    ]
+  },
+  {
+    "object": "APD untuk Penanganan Bahan Kimia",
+    "questions": [
+      {
+        "question": "Respirator",
+        "options": [
+          {
+            "option": "Tersedia",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Tersedia",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Sarung Tangan Tahan Bahan Kimia",
+        "options": [
+          {
+            "option": "Tersedia",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Tersedia",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Kacamata Pengaman (Goggles)",
+        "options": [
+          {
+            "option": "Tersedia",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Tersedia",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      },
+      {
+        "question": "Pakaian Pelindung Bahan Kimia",
+        "options": [
+          {
+            "option": "Tersedia",
+            "grade": 100
+          },
+          {
+            "option": "Tidak Tersedia",
+            "grade": 0
+          }
+        ],
+        "type": "radio"
+      }
+    ]
+  }
+]

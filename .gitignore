@@ -1,0 +1,5 @@
+.streamlit/secrets.toml
+resources
+
+# Ignore pycache
+__pycache__/
