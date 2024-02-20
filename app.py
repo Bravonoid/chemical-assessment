@@ -1,10 +1,11 @@
 import streamlit as st
 import json
 import datetime as dt
-from docxtpl import DocxTemplate
-from docx2pdf import convert
+from docxtpl import DocxTemplate, InlineImage
+from docx.shared import Mm
 import io
 import pandas as pd
+from PIL import Image
 
 import database
 
@@ -98,6 +99,7 @@ for question in questions:
         "object": f'{index}. {question["object"]}',
         "questions": [],
     }
+    question_evidences = []
 
     index += 1
     col1, col2 = st.columns(2)
@@ -148,7 +150,7 @@ for question in questions:
                 )
 
                 if answer >= subquestion["minimum"]:
-                    question_grade += 1
+                    question_grade += 100
                 key_index += 1
 
                 if answer < subquestion["minimum"]:
@@ -196,14 +198,48 @@ for question in questions:
             # 2 Decimal places
             question_grade = round(question_grade, 2)
 
+    # Add to recap
+    question_recap["evidences"] = question_evidences
+
     # Adjust object with the question number
     object_name = f'{index-1}. {question["object"]}'
 
     # Average the grade
     average_grade = question_grade / total_question
+
+    if average_grade >= 99:
+        average_grade = 100
+
     st.write(f"**Question Grade: {average_grade}**")
     total_grade += average_grade
 
+    # Add evidence via image upload if the grade is less than 100
+    if average_grade < 100:
+        uploaded_files = st.file_uploader(
+            "Unggah Bukti Audit", accept_multiple_files=True, key=key_index
+        )
+        key_index += 1
+
+        for uploaded_file in uploaded_files:
+            if uploaded_file is not None:
+                # Convert to image
+                img = Image.open(uploaded_file)
+
+                # Show the image
+                st.image(img, caption=uploaded_file.name, use_column_width=True)
+
+                image_bytes = io.BytesIO()
+                img.save(image_bytes, format="PNG")
+
+                # Add to recap
+                question_evidences.append(
+                    {
+                        "name": uploaded_file.name,
+                        "data": image_bytes.getvalue(),
+                    }
+                )
+
+    question_recap["evidences"] = question_evidences
     question_recap["grade"] = average_grade
 
     # Check if summary is empty
@@ -243,10 +279,6 @@ data = {
     "recap": final_recap,
 }
 
-# Save data to json
-with open("data.json", "w") as f:
-    json.dump(data, f)
-
 # Line break
 st.write("---")
 
@@ -260,13 +292,15 @@ for recap in final_recap:
         st.subheader(recap["object"])
         for summary in recap["summary"]:
             st.write(summary)
+        for evidence in recap["evidences"]:
+            st.image(evidence["data"], caption=evidence["name"], use_column_width=True)
 
 
 # Line break
 st.write("---")
 
 # Save to database and print to docx
-st.header("Export to Docx")
+st.header("Save & Print")
 
 col1, col2 = st.columns(2)
 
@@ -278,38 +312,48 @@ with col1:
 
 # Download the docx
 with col2:
+    # Print docx using template
+    doc = DocxTemplate("template.docx")
+
+    # Convert summary in final recap into strings with bullet points and remove the number
+    for recap in final_recap:
+
+        if "-" not in recap["summary"]:
+            summary = ""
+            for s in recap["summary"]:
+                s = s.split(". ")[1]
+                summary += f"- {s}\n"
+            recap["summary"] = summary
+        else:
+            recap["summary"] = ""
+
+        images = []
+        for evidence in recap["evidences"]:
+            # Save the image
+            img = InlineImage(doc, io.BytesIO(evidence["data"]), width=Mm(40))
+            images.append(img)
+
+        recap["images"] = images
+
+    context = {
+        "division": division,
+        "department": department,
+        "section": section,
+        "location": location,
+        "date": date,
+        "person_responsible": person_responsible,
+        "auditor": auditor,
+        "chemical_coordinator": chemical_coordinator,
+        "companion": companion,
+        "total_grade": total_grade,
+        "status": status,
+        "audits": final_recap,
+    }
+
+    doc.render(context)
+    doc.save("report.docx")
+
     with open("report.docx", "rb") as f:
-        # Print docx using template
-        doc = DocxTemplate("template.docx")
-
-        # Convert summary in final recap into strings with bullet points and remove the number
-        for recap in final_recap:
-            if "-" not in recap["summary"]:
-                summary = ""
-                for s in recap["summary"]:
-                    s = s.split(". ")[1]
-                    summary += f"- {s}\n"
-                recap["summary"] = summary
-            else:
-                recap["summary"] = "-"
-
-        context = {
-            "division": division,
-            "department": department,
-            "section": section,
-            "location": location,
-            "date": date,
-            "person_responsible": person_responsible,
-            "auditor": auditor,
-            "chemical_coordinator": chemical_coordinator,
-            "companion": companion,
-            "total_grade": total_grade,
-            "status": status,
-            "audits": final_recap,
-        }
-
-        doc.render(context)
-        doc.save("report.docx")
 
         b = io.BytesIO(f.read())
         b.seek(0)
